@@ -29,6 +29,7 @@ export default async function RootLayout({
                "Unknown";
 
           const userAgent = requestHeaders.get("user-agent") || "Unknown";
+          console.log("✅");
 
           sendVisitorMail({
                ip,
