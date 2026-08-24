@@ -105,7 +105,7 @@ export default function Gallery() {
 
                     
                          <Link
-                              href="/contact"
+                              href="/gallery"
                               className="group max-w-50 mx-auto relative flex items-center gap-2 border border-transparent bg-[#ff3b0a] px-5 py-3 text-[16px] font-extrabold text-white hover:bg-primary hover:text-accent hover:border-accent"
                          >
                               <span className="absolute left-0 top-0 h-3 w-3 border-l border-t border-white opacity-100 transition-opacity duration-300 group-hover:opacity-0" />

@@ -26,7 +26,7 @@ const services = [
 
 function Services() {
      return (
-          <section className="bg-primary w-full  px-5 py-8 md:px-12 lg:px-20 xl:px-40 md:py-8">
+          <section className="bg-primary w-full  px-5 py-8 md:px-12 lg:px-20 xl:px-40 md:py-8" id="services">
                <div className="flex flex-col gap-10">
                     <div className="py-14 border-b border-[#2b1c18]">
                          <h2 className="font-heading font-bold text-4xl md:text-6xl ">

@@ -30,7 +30,7 @@ const STATS = [
 
 function Stats() {
      return (
-          <section className="bg-primary2 w-full  px-5 py-8 md:px-12 lg:px-20 xl:px-40 md:py-8">
+          <section className="bg-primary2 w-full  px-5 py-8 md:px-12 lg:px-20 xl:px-40 md:py-8" id="about">
                <div className="flex flex-col md:flex-row items-center justify-between gap-13">
                     <div className="flex flex-col items-center justify-center gap-6 md:flex-row">
                          <Image
