@@ -1,26 +1,82 @@
-@import "tailwindcss";
+ @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+ @theme {
+   --color-primary: #160702;
+   --color-secondary: #ffffff;
+   --color-text: #b6b6b6;
+   --color-accent: #ff3700;
+   --color-primary2: #20110c;
+   --color-primary3: #060606;
+   
+   --font-primary: var(--font-roboto);
+   --font-secondary: var(--font-roboto-slab);
+   --font-text: var(--font-roboto);
+   --font-accent: var(--font-roboto);
+   --font-heading: var(--font-plus-jakarta-sans);
+   --font-heading-sm: var(--font-open-sans);
+   --font-body: var(--font-open-sans);
+   --font-button: var(--font-open-sans);
+   --font-dm: var(--font-dm-sans)
+ }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+ :root {
+   --background: #160702;
+   --foreground: #ffffff;
+   --muted-foreground: #b6b6b6;
+   --accent: #ff3700;
+ }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+ @keyframes fadeIn {
+   from {
+     opacity: 0;
+   }
+
+   to {
+     opacity: 1;
+   }
+ }
+
+ @keyframes slideIn {
+   from {
+     transform: translateX(-100%);
+   }
+
+   to {
+     transform: translateX(0);
+   }
+ }
+
+ @keyframes navItemIn {
+   from {
+     opacity: 0;
+     transform: translateX(2rem);
+   }
+
+   to {
+     opacity: 1;
+     transform: translateX(0);
+   }
+ }
+
+ @keyframes slow-spin {
+   from {
+     transform: rotate(0deg);
+   }
+
+   to {
+     transform: rotate(360deg);
+   }
+ }
+
+ .animate-slow-spin {
+   animation: slow-spin 10s linear infinite;
+ }
+
+ html,
+ body {
+   background: var(--background);
+   color: var(--foreground);
+   font-family: var(--font-body);
+   scroll-behavior: smooth;
+ }
