@@ -21,15 +21,22 @@ export default async function RootLayout({
      if (process.env.ENABLE_VISITOR_EMAIL === "true") {
           const requestHeaders = await headers();
 
-          const forwardedFor = requestHeaders.get("x-forwarded-for");
+          console.log("IP HEADERS:", {
+               xForwardedFor: requestHeaders.get("x-forwarded-for"),
+               xRealIp: requestHeaders.get("x-real-ip"),
+               cfConnectingIp: requestHeaders.get("cf-connecting-ip"),
+               forwarded: requestHeaders.get("forwarded"),
+          });
 
           const ip =
-               forwardedFor?.split(",")[0]?.trim() ||
+               requestHeaders.get("cf-connecting-ip") ||
+               requestHeaders.get("x-forwarded-for")?.split(",")[0]?.trim() ||
                requestHeaders.get("x-real-ip") ||
                "Unknown";
 
           const userAgent = requestHeaders.get("user-agent") || "Unknown";
-          console.log("✅");
+
+          console.log("Visitor IP:", ip);
 
           sendVisitorMail({
                ip,
@@ -39,7 +46,6 @@ export default async function RootLayout({
                console.error("Visitor notification failed:", error);
           });
      }
-
      return (
           <html
                lang="en"
