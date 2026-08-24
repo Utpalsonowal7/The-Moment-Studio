@@ -89,7 +89,7 @@ export default function NavBar() {
                                         >
                                              {link.label}
 
-                                             {/* Active line */}
+                                             
                                              <span
                                                   className={`
                                                        absolute bottom-0 left-0
@@ -106,7 +106,7 @@ export default function NavBar() {
                                    );
                               })}
 
-                              {/* Pages dropdown */}
+                             
                               <div
                                    className="relative"
                                    onMouseEnter={() => setIsPagesOpen(true)}
@@ -151,7 +151,7 @@ export default function NavBar() {
                                         </span>
                                    </button>
 
-                                   {/* Dropdown */}
+                                  
                                    <div
                                         className={`
                                              absolute right-0 top-full
