@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
+
 import { roboto, robotoSlab, plusJakartaSans, openSans, dmSans } from "./fonts";
+
 import "./globals.css";
+
+import { sendVisitorMail } from "@/utils/mail";
 
 export const metadata: Metadata = {
      title: "FotoVibe – Photography & Photographer Portfolio",
@@ -8,15 +13,42 @@ export const metadata: Metadata = {
           "Preserving cherished memories through the lens, turning fleeting moments into timeless images.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
      children,
 }: {
      children: React.ReactNode;
 }) {
+     if (process.env.ENABLE_VISITOR_EMAIL === "true") {
+          const requestHeaders = await headers();
+
+          const forwardedFor = requestHeaders.get("x-forwarded-for");
+
+          const ip =
+               forwardedFor?.split(",")[0]?.trim() ||
+               requestHeaders.get("x-real-ip") ||
+               "Unknown";
+
+          const userAgent = requestHeaders.get("user-agent") || "Unknown";
+
+          sendVisitorMail({
+               ip,
+               userAgent,
+               path: "/",
+          }).catch((error) => {
+               console.error("Visitor notification failed:", error);
+          });
+     }
+
      return (
           <html
                lang="en"
-               className={`${roboto.variable} ${robotoSlab.variable} ${plusJakartaSans.variable} ${openSans.variable} ${dmSans.variable}`}
+               className={`
+                    ${roboto.variable}
+                    ${robotoSlab.variable}
+                    ${plusJakartaSans.variable}
+                    ${openSans.variable}
+                    ${dmSans.variable}
+               `}
           >
                <body>{children}</body>
           </html>
