@@ -1,4 +1,3 @@
-import { ArrowRight } from "lucide-react";
 import React from "react";
 
 const services = [

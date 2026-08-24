@@ -5,7 +5,7 @@ import { BsFacebook, BsInstagram, BsTwitterX, BsYoutube } from "react-icons/bs";
 import { Italianno } from "next/font/google";
 
 import { useState, useEffect } from "react";
-import { MdArrowRight, MdCheckCircle } from "react-icons/md";
+import { MdCheckCircle } from "react-icons/md";
 
 const navigation = [
      { name: "About", href: "#about" },
@@ -75,7 +75,6 @@ export default function Footer() {
                          </p>
                     </div>
 
-                    
                     <div>
                          <h3 className="mb-6 text-sm font-bold uppercase tracking-[0.2em] text-accent">
                               Navigation
@@ -95,7 +94,6 @@ export default function Footer() {
                          </ul>
                     </div>
 
-                  
                     <div>
                          <h3 className="mb-6 text-sm font-bold uppercase tracking-[0.2em] text-accent">
                               Services
@@ -125,7 +123,10 @@ export default function Footer() {
                               latest work.
                          </p>
 
-                         <form className="flex border-b border-white/20 pb-2" onSubmit={handleSubmit}>
+                         <form
+                              className="flex border-b border-white/20 pb-2"
+                              onSubmit={handleSubmit}
+                         >
                               <input
                                    type="email"
                                    placeholder="Email address..."
@@ -137,7 +138,7 @@ export default function Footer() {
                                    type="submit"
                                    className="cursor-pointer text-sm font-bold text-accent transition-colors hover:text-white"
                               >
-                                   {isSent ? <MdCheckCircle/> : "submit"}
+                                   {isSent ? <MdCheckCircle /> : "submit"}
                               </button>
                          </form>
                     </div>
@@ -194,8 +195,8 @@ export default function Footer() {
                {/* Bottom */}
                <div className="flex flex-col gap-3 py-6 text-center text-xs text-text md:flex-row md:items-center md:justify-between md:text-left">
                     <p>
-                         © {new Date().getFullYear()} FotoVibe. All rights
-                         reserved.
+                         © {new Date().getFullYear()} The Moment Studio. All
+                         rights reserved.
                     </p>
 
                     <p>

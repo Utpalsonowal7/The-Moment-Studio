@@ -8,12 +8,6 @@ import Pricing from "@/components/layouts/Pricing";
 import FAQ from "@/components/layouts/Faq";
 import GetInTouch from "@/components/layouts/GIT";
 import Footer from "@/components/layouts/Footer";
-// import Gallery from "@/components/Gallery";
-// import Testimonials from "@/components/Testimonials";
-// import Pricing from "@/components/Pricing";
-// import FAQ from "@/components/FAQ";
-// import CTA from "@/components/CTA";
-// import Footer from "@/components/Footer";
 
 export default function Home() {
      return (

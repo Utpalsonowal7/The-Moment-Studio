@@ -117,7 +117,7 @@ function Testimonials() {
 
                    
                     <div className="min-h-[300px] border border-white/10 p-8 md:p-12">
-                         {/* Stars */}
+                       
                          <div className="mb-8 flex gap-1">
                               {Array.from({ length: 5 }).map((_, index) => (
                                    <Star

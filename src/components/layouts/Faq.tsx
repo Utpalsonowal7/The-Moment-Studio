@@ -65,7 +65,6 @@ export default function FAQ() {
                          </p>
                     </div>
 
-                    {/* FAQ */}
                     <div className="border-t border-white/10">
                          {faqs.map((faq, index) => {
                               const isOpen = openIndex === index;
